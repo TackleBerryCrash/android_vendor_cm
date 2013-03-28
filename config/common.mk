@@ -159,6 +159,9 @@ PRODUCT_PACKAGES += \
     CMFileManager \
     OTAUpdateCenter
 
+PRODUCT_PACKAGES += \
+    CellBroadcastReceiver
+
 # Extra tools in CM
 PRODUCT_PACKAGES += \
     openvpn \
