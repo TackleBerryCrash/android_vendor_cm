@@ -153,9 +153,9 @@ PRODUCT_PACKAGES += \
     audio_effects.conf \
     CMWallpapers \
     Apollo \
-    CMUpdater \
+    LockClock \
     CMFileManager \
-    LockClock
+    OTAUpdateCenter
 
 # Extra tools in CM
 PRODUCT_PACKAGES += \
