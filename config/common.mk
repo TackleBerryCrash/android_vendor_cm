@@ -156,8 +156,7 @@ PRODUCT_PACKAGES += \
     CMWallpapers \
     Apollo \
     LockClock \
-    CMFileManager \
-    OTAUpdateCenter
+    CMFileManager
 
 PRODUCT_PACKAGES += \
     CellBroadcastReceiver
@@ -219,7 +218,7 @@ ifdef CM_BUILDTYPE
     endif
 else
     # If CM_BUILDTYPE is not defined, set to UNOFFICIAL
-    CM_BUILDTYPE := TackleBerry_Crash-LINAROBEAN
+    CM_BUILDTYPE := LINAROBEAN
     CM_EXTRAVERSION :=
 endif
 
@@ -227,17 +226,17 @@ ifdef CM_RELEASE
     CM_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)$(PRODUCT_VERSION_DEVICE_SPECIFIC)-$(CM_BUILD)
 else
     ifeq ($(PRODUCT_VERSION_MINOR),0)
-        CM_VERSION := $(PRODUCT_VERSION_MAJOR)-$(shell date -u +%Y%m%d)-$(CM_BUILDTYPE)-$(CM_BUILD)$(CM_EXTRAVERSION)
+        CM_VERSION := $(CM_BUILDTYPE)-$(shell date -u +%Y%m%d)-$(CM_BUILD)$(CM_EXTRAVERSION)
     else
-        CM_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(shell date -u +%Y%m%d)-$(CM_BUILDTYPE)-$(CM_BUILD)$(CM_EXTRAVERSION)
+        CM_VERSION := $(CM_BUILDTYPE)-$(shell date -u +%Y%m%d)-$(CM_BUILD)$(CM_EXTRAVERSION)
     endif
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.cm.version=$(CM_VERSION) \
   ro.modversion=$(CM_VERSION) \
-  ro.goo.developerid=TackleBerryCrash \
-  ro.goo.rom=LinaroCM10.1 \
+  ro.goo.developerid=tackleberry_crash \
+  ro.goo.rom=LINAROBEAN \
   ro.goo.version=$(shell date +%s)
 
 -include $(WORKSPACE)/hudson/image-auto-bits.mk
